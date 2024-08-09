@@ -1,0 +1,270 @@
+:root
+{
+    scroll-behavior: smooth;
+    --color-red: #BA1211;
+    --color-gray: #c5c5c5;
+    --color-white: #FFFFFF;
+    --color-black: #0C0C0C;
+}
+
+@font-face
+{
+    font-family: poppins-medium;
+    src: url("../fonts/Poppins-Medium.ttf");
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+    font-family: poppins-medium;
+    color: var(--color-black);
+    background: url("../images/arrows.jpg");
+    background-size: 0px;
+}
+
+header
+{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    gap: 30px;
+    padding: 5px 10px 0px 10px;
+    color: var(--color-black);
+}
+
+header a
+{
+    position: relative;
+    text-decoration: none;
+    color: var(--color-black);
+    margin: 0px 0px 5px 0px;
+}
+
+header a::after
+{
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: var(--color-red);
+    transition: width 0.2s;
+}
+
+header a:hover
+{
+    color: var(--color-red);
+
+}
+
+header a:hover::after
+{
+    width: 100%;
+}
+
+#header-global
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+#websites-navigation
+{
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 14px;
+    padding: 15px 0px 0px 0px;
+    margin: 0px 10px 0px 0px;
+}
+
+#website-navigation a
+{
+    margin: 0px !important;
+}
+
+#website-navigation a::after
+{
+    height: 1px !important;
+}
+
+#page-navigation
+{
+    display: flex;
+    font-size: 13px;
+    font-weight: bold;
+    gap: 50px;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px 0px 0px 45px;
+}
+
+#page-navigation a
+{
+    padding: 0px 0px 5px 0px;
+    margin: 0px !important;
+}
+
+#header-name
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0px 50px 0px 15px;
+}
+
+#header-name img
+{
+    height: 70px;
+    padding: 5px 0px 0px 0px;
+}
+
+header h1
+{
+    margin: 0px 0px 0px 20px;
+    font-size: 25x;
+}
+
+header h4
+{
+    font-size: 12px;
+    margin: 15px 0px 0px 0px;
+}
+
+#shield
+{
+    width: 200px;
+    margin: 20px;
+    display: none;
+}
+
+body > section
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#slideshow
+{
+    position: relative;
+}
+
+#slideshow-images
+{
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    margin: 5px 0px 0px 0px;
+}
+
+#slideshow-images img
+{
+    width: 100%;
+    height: fit-content;
+}
+
+#slideshow-controls
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.slideshow-control
+{
+    width: 35px;
+    height: 7px;
+    margin: 0px 0px 10px 0px;
+    border-radius: 3.5px;
+
+    opacity: 0.85;
+    background-color: var(--color-gray);
+}
+
+.slideshow-control:hover
+{
+    opacity: 1;
+    background-color: var(--color-red);
+}
+
+footer
+{
+    padding: 20px 0px 30px 0px;
+
+    gap: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#footer-map
+{
+    width: 350px;
+    height: 250px;
+    border: 0px;
+}
+
+#footer-websites
+{
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#footer-websites img
+{
+    height: 70px;
+    margin: 0px 0px 10px 0px;
+}
+
+footer a
+{
+    position: relative;
+    text-decoration: none;
+    color: var(--color-black);
+    margin: 0px 0px 5px 0px;
+    padding: 0px 0px 0px 5px;
+    width: fit-content;
+}
+
+footer a::after
+{
+    position: absolute;
+    bottom: -2px;
+    left: 3px;
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: var(--color-red);
+    transition: width 0.2s;
+}
+
+footer a:hover
+{
+    color: var(--color-red);
+}
+
+footer a:hover::after
+{
+    width: 100%;
+}
