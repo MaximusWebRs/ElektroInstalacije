@@ -2,16 +2,18 @@
     <head>
         <title>Maximus Instalacije</title>
         <link href="css/index.css" rel="stylesheet">
+        <script src="js/main.js"></script>
+        <script src="js/header.js"></script>
         <script src="js/slideshow.js"></script>
     </head>
-    <body onload="initSlideshow()">
-        <header>
+    <body onload="initScroll(); initHeader(); initSlideshow();" onscroll="handleScroll()">
+        <header id="header">
             <div id="header-global">
                 <div id="header-name">
                     <img src="images/logo.jpg">
                     <h4>elektro instalacije od 2020. godine</h4>
                 </div>
-                <nav id="websites-navigation">
+                <nav id="header-websites-navigation">
                     <a href="maximus-video-nadzor.com">
                         Video nadzor
                     </a>
@@ -23,33 +25,102 @@
                     </a>
                 </nav>
             </div>
-            <nav id="page-navigation">
-                <a href="#header-global">
+            <nav id="page-navigation" data-scroll-fixed>
+                <a href="#header">
                     POČETAK
                 </a>
-                <a href="">
-                    POUNDA
-                </a>
-                <a href="">
-                   PROIZVOĐAČI
+                <a href="#manufacturers">
+                    PROIZVOĐAČI
+                 </a>
+                <a href="#offer">
+                    PONUDA
                 </a>
                 <a href="">
                     SERTIFIKATI
                 </a>
-                <a href="">
-                    SARADNICI
+                <a href="#footer">
+                    KONTAKT
                 </a>
             </nav>
         </header>
         <section id="slideshow">
             <div id="slideshow-images">
-                <img src="images/slideshow/test-1.jpg">
+                <img src="images/slideshow/test-1.jpg" class="active">
+                <img src="images/slideshow/test-2.jpg">
             </div>
             <div id="slideshow-controls">
             </div>
         </section>
-        <img src="images/shield.gif" id="shield">
-        <div style="height: 1000px;"></div>
+        <section id="manufacturers" class="scroller-w-images">
+            <h1>PROIZVOĐAČI U NAŠOJ POUNDI</h1>
+            <div id="manufacturers-wrapper" class="wrapper inactive" data-horizontal-scroller="15000ms">
+                <a href="https://www.aling-conel.com/sr/" target="_blank"><img src="images/manufacturers/aling-conel.webp"></a>
+                <a href="https://www.se.com/rs/sr/" target="_blank"><img src="images/manufacturers/schneider-electric.png"></a>
+                <a href="https://nopallux.rs/" target="_blank"><img src="images/manufacturers/nopallux.png"></a>
+                <a href="https://www.aling-conel.com/sr/" target="_blank"><img src="images/manufacturers/aling-conel.webp"></a>
+                <a href="https://www.se.com/rs/sr/" target="_blank"><img src="images/manufacturers/schneider-electric.png"></a>
+                <a href="https://nopallux.rs/" target="_blank"><img src="images/manufacturers/nopallux.png"></a>
+            </div>
+        </section>
+        <section id="offer">
+            <article class="left">
+                <h2>INDUSTRIJSKE ELEKTRO INSTALACIJE</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                    Morbi quis tincidunt justo, eget rhoncus risus.
+                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                    Proin in commodo metus. In hendrerit sollicitudin convallis.
+                    Duis hendrerit tellus id nulla accumsan, imperdiet faucibus enim gravida.
+                    Ut augue tellus, venenatis id euismod finibus, blandit convallis ligula.
+                    Vivamus et lorem dignissim, iaculis ante at, dapibus felis.
+                    Duis mi urna, ultricies quis ligula non, commodo congue ipsum.
+                    Ut ac tortor quis nulla sodales tristique. Suspendisse sollicitudin lorem a mattis bibendum.
+                    Aenean tristique neque nec venenatis sodales. Vivamus nec pulvinar dui, id iaculis arcu.
+                    Morbi lectus arcu, viverra vel venenatis at, luctus et turpis.
+                    Sed hendrerit massa sed mi tincidunt feugiat.
+                </p>
+                <a href="#footer">POSALJITE UPIT ZA CENE</a>
+                <img src="images/offers/industrial.webp">
+            </article>
+            <article class="right">
+                <h2>STAMBENE ELEKTRO INSTALACIJE</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                    Morbi quis tincidunt justo, eget rhoncus risus.
+                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                    Proin in commodo metus. In hendrerit sollicitudin convallis.
+                    Duis hendrerit tellus id nulla accumsan, imperdiet faucibus enim gravida.
+                    Ut augue tellus, venenatis id euismod finibus, blandit convallis ligula.
+                    Vivamus et lorem dignissim, iaculis ante at, dapibus felis.
+                    Duis mi urna, ultricies quis ligula non, commodo congue ipsum.
+                    Ut ac tortor quis nulla sodales tristique. Suspendisse sollicitudin lorem a mattis bibendum.
+                    Aenean tristique neque nec venenatis sodales. Vivamus nec pulvinar dui, id iaculis arcu.
+                    Morbi lectus arcu, viverra vel venenatis at, luctus et turpis.
+                    Sed hendrerit massa sed mi tincidunt feugiat.
+                </p>
+                <a href="#footer">POSALJITE UPIT ZA CENE</a>
+                <img src="images/offers/apartments.webp">
+            </article>
+        </section>
+        <section id="certificates">
+
+        </section>
+        <section id="partners" class="scroller-w-images">
+            <h1>NAŠI SARADNICI</h1>
+            <hr>
+            <div id="partners-wrapper" class="wrapper inactive" data-horizontal-scroller="15000ms">
+                <a href="http://www.metalflex.rs" target="_blank"><img src="images/partners/metalflex.webp"></a>
+                <a href="http://www.antenall.rs" target="_blank"><img src="images/partners/antenall.png"></a>
+                <a href="http://www.metalflex.rs" target="_blank"><img src="images/partners/metalflex.webp"></a>
+                <a href="http://www.antenall.rs" target="_blank"><img src="images/partners/antenall.png"></a>
+                <a href="http://www.metalflex.rs" target="_blank"><img src="images/partners/metalflex.webp"></a>
+                <a href="http://www.antenall.rs" target="_blank"><img src="images/partners/antenall.png"></a>
+                <a href="http://www.metalflex.rs" target="_blank"><img src="images/partners/metalflex.webp"></a>
+                <a href="http://www.antenall.rs" target="_blank"><img src="images/partners/antenall.png"></a>
+            </div>
+        </section>
         <footer id="footer">
             <nav id="footer-websites">
                 <img src="images/logo.jpg">
