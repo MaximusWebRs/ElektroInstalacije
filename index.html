@@ -1,129 +1,32 @@
 <html>
-    <head>
-        <title>Maximus Instalacije</title>
-        <link href="css/index.css" rel="stylesheet">
-        <script src="js/main.js"></script>
-        <script src="js/header.js"></script>
-        <script src="js/slideshow.js"></script>
-    </head>
-    <body onload="initScroll(); initHeader(); initSlideshow();" onscroll="handleScroll()">
-        <header id="header">
-            <div id="header-global">
-                <div id="header-name">
-                    <img src="images/logo.jpg">
-                    <h4>elektro instalacije od 2020. godine</h4>
-                </div>
-                <nav id="header-websites-navigation">
-                    <a href="maximus-video-nadzor.com">
-                        Video nadzor
-                    </a>
-                    <a href="maximus-dojava-pozara.com">
-                        Dojava pozara
-                    </a>
-                    <a href="maximus-telekom.com">
-                        Telekomunikacije
-                    </a>
-                </nav>
-            </div>
-            <nav id="page-navigation" data-scroll-fixed>
-                <a href="#header">
-                    POČETAK
-                </a>
-                <a href="#manufacturers">
-                    PROIZVOĐAČI
-                 </a>
-                <a href="#offer">
-                    PONUDA
-                </a>
-                <a href="">
-                    SERTIFIKATI
-                </a>
-                <a href="#footer">
-                    KONTAKT
-                </a>
-            </nav>
-        </header>
-        <section id="slideshow">
-            <div id="slideshow-images">
-                <img src="images/slideshow/test-1.jpg" class="active">
-                <img src="images/slideshow/test-2.jpg">
-            </div>
-            <div id="slideshow-controls">
-            </div>
-        </section>
-        <section id="manufacturers" class="scroller-w-images">
-            <h1>PROIZVOĐAČI U NAŠOJ POUNDI</h1>
-            <div id="manufacturers-wrapper" class="wrapper inactive" data-horizontal-scroller="15000ms">
-                <a href="https://www.aling-conel.com/sr/" target="_blank"><img src="images/manufacturers/aling-conel.webp"></a>
-                <a href="https://www.se.com/rs/sr/" target="_blank"><img src="images/manufacturers/schneider-electric.png"></a>
-                <a href="https://nopallux.rs/" target="_blank"><img src="images/manufacturers/nopallux.png"></a>
-                <a href="https://www.aling-conel.com/sr/" target="_blank"><img src="images/manufacturers/aling-conel.webp"></a>
-                <a href="https://www.se.com/rs/sr/" target="_blank"><img src="images/manufacturers/schneider-electric.png"></a>
-                <a href="https://nopallux.rs/" target="_blank"><img src="images/manufacturers/nopallux.png"></a>
-            </div>
-        </section>
-        <section id="offer">
-            <article class="left">
-                <h2>INDUSTRIJSKE ELEKTRO INSTALACIJE</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
-                    Morbi quis tincidunt justo, eget rhoncus risus.
-                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
-                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
-                    Proin in commodo metus. In hendrerit sollicitudin convallis.
-                    Duis hendrerit tellus id nulla accumsan, imperdiet faucibus enim gravida.
-                    Ut augue tellus, venenatis id euismod finibus, blandit convallis ligula.
-                    Vivamus et lorem dignissim, iaculis ante at, dapibus felis.
-                    Duis mi urna, ultricies quis ligula non, commodo congue ipsum.
-                    Ut ac tortor quis nulla sodales tristique. Suspendisse sollicitudin lorem a mattis bibendum.
-                    Aenean tristique neque nec venenatis sodales. Vivamus nec pulvinar dui, id iaculis arcu.
-                    Morbi lectus arcu, viverra vel venenatis at, luctus et turpis.
-                    Sed hendrerit massa sed mi tincidunt feugiat.
-                </p>
-                <a href="#footer">POSALJITE UPIT ZA CENE</a>
-                <img src="images/offers/industrial.webp">
-            </article>
-            <article class="right">
-                <h2>STAMBENE ELEKTRO INSTALACIJE</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
-                    Morbi quis tincidunt justo, eget rhoncus risus.
-                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
-                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
-                    Proin in commodo metus. In hendrerit sollicitudin convallis.
-                    Duis hendrerit tellus id nulla accumsan, imperdiet faucibus enim gravida.
-                    Ut augue tellus, venenatis id euismod finibus, blandit convallis ligula.
-                    Vivamus et lorem dignissim, iaculis ante at, dapibus felis.
-                    Duis mi urna, ultricies quis ligula non, commodo congue ipsum.
-                    Ut ac tortor quis nulla sodales tristique. Suspendisse sollicitudin lorem a mattis bibendum.
-                    Aenean tristique neque nec venenatis sodales. Vivamus nec pulvinar dui, id iaculis arcu.
-                    Morbi lectus arcu, viverra vel venenatis at, luctus et turpis.
-                    Sed hendrerit massa sed mi tincidunt feugiat.
-                </p>
-                <a href="#footer">POSALJITE UPIT ZA CENE</a>
-                <img src="images/offers/apartments.webp">
-            </article>
-        </section>
-        <section id="certificates">
 
-        </section>
-        <section id="partners" class="scroller-w-images">
-            <h1>NAŠI SARADNICI</h1>
-            <hr>
-            <div id="partners-wrapper" class="wrapper inactive" data-horizontal-scroller="15000ms">
-                <a href="http://www.metalflex.rs" target="_blank"><img src="images/partners/metalflex.webp"></a>
-                <a href="http://www.antenall.rs" target="_blank"><img src="images/partners/antenall.png"></a>
-                <a href="http://www.metalflex.rs" target="_blank"><img src="images/partners/metalflex.webp"></a>
-                <a href="http://www.antenall.rs" target="_blank"><img src="images/partners/antenall.png"></a>
-                <a href="http://www.metalflex.rs" target="_blank"><img src="images/partners/metalflex.webp"></a>
-                <a href="http://www.antenall.rs" target="_blank"><img src="images/partners/antenall.png"></a>
-                <a href="http://www.metalflex.rs" target="_blank"><img src="images/partners/metalflex.webp"></a>
-                <a href="http://www.antenall.rs" target="_blank"><img src="images/partners/antenall.png"></a>
-            </div>
-        </section>
-        <footer id="footer">
-            <nav id="footer-websites">
+<head>
+    <title>Maximus Instalacije</title>
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/slideshow.js"></script>
+    <script src="js/extra-offers.js"></script>
+    <script src="js/mail-sender.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "bamynrPBhbxBJCVrb",
+            });
+        })();
+    </script>
+</head>
+
+<body onload="initScroll(); initHeader(); initSlideshow(); initExtraOffers();" onscroll="handleScroll()">
+    <header>
+        <div id="header-global">
+            <div id="header-name">
                 <img src="images/logo.jpg">
+                <h4>elektro instalacije od 2020. godine</h4>
+            </div>
+            <nav id="header-websites-navigation">
                 <a href="maximus-video-nadzor.com">
                     Video nadzor
                 </a>
@@ -134,7 +37,229 @@
                     Telekomunikacije
                 </a>
             </nav>
-            <iframe id="footer-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2823.277964748588!2d20.202172977215564!3d44.95834417972392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a5935ad24846f%3A0xc8b832e2d76212d5!2sMaximus%20Security!5e0!3m2!1sen!2srs!4v1723212001408!5m2!1sen!2srs" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </footer>
-    </body>
+        </div>
+        <nav id="page-navigation" data-scroll-fixed>
+            <a data-page-scroll-target="header">
+                POČETAK
+            </a>
+            <a data-page-scroll-target="#offer" data-page-scroll-offset="-40">
+                PONUDA
+            </a>
+            <a data-page-scroll-target="#extra-offers" data-page-scroll-offset="-80">
+                OSTALE USLUGE
+            </a>
+            <a data-page-scroll-target="footer">
+                KONTAKT
+            </a>
+        </nav>
+    </header>
+    <section id="slideshow">
+        <div id="slideshow-images">
+            <img src="images/slideshow/test-1.jpg" class="active">
+            <img src="images/slideshow/test-2.jpg">
+        </div>
+        <div id="slideshow-controls">
+        </div>
+    </section>
+    <section id="manufacturers" class="scroller-w-images">
+        <h1>PROIZVOĐAČI U NAŠOJ POUNDI</h1>
+        <div id="manufacturers-wrapper" class="wrapper inactive" data-horizontal-scroller="15000ms">
+            <a href="https://www.aling-conel.com/sr/" target="_blank"><img
+                    src="images/manufacturers/aling-conel.webp"></a>
+            <a href="https://www.se.com/rs/sr/" target="_blank"><img
+                    src="images/manufacturers/schneider-electric.png"></a>
+            <a href="https://nopallux.rs/" target="_blank"><img src="images/manufacturers/nopallux.png"></a>
+            <a href="https://www.aling-conel.com/sr/" target="_blank"><img
+                    src="images/manufacturers/aling-conel.webp"></a>
+            <a href="https://www.se.com/rs/sr/" target="_blank"><img
+                    src="images/manufacturers/schneider-electric.png"></a>
+            <a href="https://nopallux.rs/" target="_blank"><img src="images/manufacturers/nopallux.png"></a>
+        </div>
+    </section>
+    <section id="offer">
+        <article class="left">
+            <h2>INDUSTRIJSKE ELEKTRO INSTALACIJE</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                Morbi quis tincidunt justo, eget rhoncus risus.
+                Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                Proin in commodo metus. In hendrerit sollicitudin convallis.
+                Duis hendrerit tellus id nulla accumsan, imperdiet faucibus enim gravida.
+                Ut augue tellus, venenatis id euismod finibus, blandit convallis ligula.
+                Vivamus et lorem dignissim, iaculis ante at, dapibus felis.
+                Duis mi urna, ultricies quis ligula non, commodo congue ipsum.
+                Ut ac tortor quis nulla sodales tristique. Suspendisse sollicitudin lorem a mattis bibendum.
+                Aenean tristique neque nec venenatis sodales. Vivamus nec pulvinar dui, id iaculis arcu.
+                Morbi lectus arcu, viverra vel venenatis at, luctus et turpis.
+                Sed hendrerit massa sed mi tincidunt feugiat.
+            </p>
+            <a data-page-scroll-target="footer">POSALJITE UPIT ZA CENE</a>
+            <img src="images/offers/industrial.webp">
+        </article>
+        <article class="right">
+            <h2>STAMBENE ELEKTRO INSTALACIJE</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                Morbi quis tincidunt justo, eget rhoncus risus.
+                Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                Proin in commodo metus. In hendrerit sollicitudin convallis.
+                Duis hendrerit tellus id nulla accumsan, imperdiet faucibus enim gravida.
+                Ut augue tellus, venenatis id euismod finibus, blandit convallis ligula.
+                Vivamus et lorem dignissim, iaculis ante at, dapibus felis.
+                Duis mi urna, ultricies quis ligula non, commodo congue ipsum.
+                Ut ac tortor quis nulla sodales tristique. Suspendisse sollicitudin lorem a mattis bibendum.
+                Aenean tristique neque nec venenatis sodales. Vivamus nec pulvinar dui, id iaculis arcu.
+                Morbi lectus arcu, viverra vel venenatis at, luctus et turpis.
+                Sed hendrerit massa sed mi tincidunt feugiat.
+            </p>
+            <a href="#footer">POSALJITE UPIT ZA CENE</a>
+            <img src="images/offers/apartments.webp">
+        </article>
+    </section>
+    <section id="certificates">
+
+    </section>
+    <section id="partners" class="scroller-w-images">
+        <h1>NAŠI SARADNICI</h1>
+        <hr>
+        <div id="partners-wrapper" class="wrapper inactive" data-horizontal-scroller="15000ms">
+            <a href="http://www.metalflex.rs" target="_blank"><img src="images/partners/metalflex.webp"></a>
+            <a href="http://www.antenall.rs" target="_blank"><img src="images/partners/antenall.png"></a>
+            <a href="http://www.metalflex.rs" target="_blank"><img src="images/partners/metalflex.webp"></a>
+            <a href="http://www.antenall.rs" target="_blank"><img src="images/partners/antenall.png"></a>
+            <a href="http://www.metalflex.rs" target="_blank"><img src="images/partners/metalflex.webp"></a>
+            <a href="http://www.antenall.rs" target="_blank"><img src="images/partners/antenall.png"></a>
+            <a href="http://www.metalflex.rs" target="_blank"><img src="images/partners/metalflex.webp"></a>
+            <a href="http://www.antenall.rs" target="_blank"><img src="images/partners/antenall.png"></a>
+        </div>
+    </section>
+    <section id="extra-offers">
+        <div id="extra-offers-wrapper">
+            <article>
+                <h2>Rasveta</h2>
+                <a>Procitaj jos...</a>
+                <img src="images/extra offers/lighting.jpg">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                    Morbi quis tincidunt justo, eget rhoncus risus.
+                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                    Proin in commodo metus.
+                </p>
+            </article>
+            <article>
+                <h2>Antipanic</h2>
+                <a>Procitaj jos...</a>
+                <img src="images/extra offers/antipanic.jpg">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                    Morbi quis tincidunt justo, eget rhoncus risus.
+                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                    Proin in commodo metus.
+                </p>
+            </article>
+            <article>
+                <h2>Galanterija</h2>
+                <a>Procitaj jos...</a>
+                <img src="images/extra offers/outlets.jpg">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                    Morbi quis tincidunt justo, eget rhoncus risus.
+                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                    Proin in commodo metus.
+                </p>
+            </article>
+            <article>
+                <h2>Podno Grejanje</h2>
+                <a>Procitaj jos...</a>
+                <img src="images/extra offers/floor-heating.jpg">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                    Morbi quis tincidunt justo, eget rhoncus risus.
+                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                    Proin in commodo metus.
+                </p>
+            </article>
+            <article>
+                <h2>Osiguraci</h2>
+                <a>Procitaj jos...</a>
+                <img src="images/extra offers/breakers.jpg">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                    Morbi quis tincidunt justo, eget rhoncus risus.
+                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                    Proin in commodo metus.
+                </p>
+            </article>
+            <article>
+                <h2>Uzemljenje</h2>
+                <a>Procitaj jos...</a>
+                <img src="images/extra offers/ground.jpg">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                    Morbi quis tincidunt justo, eget rhoncus risus.
+                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                    Proin in commodo metus.
+                </p>
+            </article>
+            <article>
+                <h2>Gromobrani</h2>
+                <a>Procitaj jos...</a>
+                <img src="images/extra offers/grounding-lightning.jpg">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                    Morbi quis tincidunt justo, eget rhoncus risus.
+                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                    Proin in commodo metus.
+                </p>
+            </article>
+        </div>
+        <div id="extra-offers-preview">
+            <img>
+            <article>
+                <h2></h2>
+                <p></p>
+            </article>
+            <div id="extra-offers-preview-close" onclick="hideExtraOfferPreview()"><img src="images/x.png"></div>
+        </div>
+    </section>
+    <footer>
+        <nav id="footer-websites">
+            <img src="images/logo.jpg">
+            <a href="maximus-video-nadzor.com">
+                Video nadzor
+            </a>
+            <a href="maximus-dojava-pozara.com">
+                Dojava pozara
+            </a>
+            <a href="maximus-telekom.com">
+                Telekomunikacije
+            </a>
+        </nav>
+        <form onsubmit="sendMail();">
+            <input type="email" required id="contact-email">
+            <input type="submit">
+        </form>
+        <iframe id="footer-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2823.277964748588!2d20.202172977215564!3d44.95834417972392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a5935ad24846f%3A0xc8b832e2d76212d5!2sMaximus%20Security!5e0!3m2!1sen!2srs!4v1723212001408!5m2!1sen!2srs"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </footer>
+</body>
+
 </html>

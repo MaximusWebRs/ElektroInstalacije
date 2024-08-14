@@ -55,9 +55,9 @@ function PageNavigationLink(element)
 {
     this.element = element;
     try {
-    this.linkedElement = document.querySelector(element.getAttribute("href").toString());
+    this.linkedElement = document.querySelector(element.getAttribute("data-page-scroll-target"));
     } catch
     {
-        console.error("Missing an href in page navigation.");
+        console.error("Missing a target in page navigation.");
     }
 }
