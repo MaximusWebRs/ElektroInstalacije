@@ -253,8 +253,58 @@
             </a>
         </nav>
         <form onsubmit="sendMail();">
-            <input type="email" required id="contact-email">
-            <input type="submit">
+            <h1>
+                Posaljite upit
+            </h1>
+            <hr>
+            <div id="form-selectors">
+                <div id="form-selectors-offer">
+                    <h2>Tip objekta</h2>
+                    <div class="wrapper">
+                        <input type="radio" id="form-selector-offer-residential" name="offer" value="Residential" checked>
+                        <label for="form-selector-offer-residential">Stambeni</label><br>
+                        <input type="radio" id="form-selector-offer-industrial" name="offer" value="Industrial">
+                        <label for="form-selector-offer-industrial">Industrijski</label><br>
+                        <input type="radio" id="form-selector-offer-household" name="offer" value="Household">
+                        <label for="form-selector-offer-household">Kuca</label><br>
+                    </div>
+                </div>
+                <div id="form-selectors-extra">
+                    <h2>Usluge</h2>
+                    <div class="wrapper" required>
+                        <input type="checkbox" id="form-selector-extra-installations" name="extra" value="Instalacije">
+                        <label for="form-selector-extra-installations">Instalacije</label><br>
+
+                        <input type="checkbox" id="form-selector-extra-lighting" name="extra" value="Rasveta">
+                        <label for="form-selector-extra-lighting">Rasveta</label><br>
+
+                        <input type="checkbox" id="form-selector-extra-antipanic" name="extra" value="Antipanic">
+                        <label for="form-selector-extra-antipanic">Antipanic</label><br>
+
+                        <input type="checkbox" id="form-selector-extra-outlets" name="extra" value="Galanterija">
+                        <label for="form-selector-extra-outlets">Galanterija</label><br>
+
+                        <input type="checkbox" id="form-selector-extra-floorheating" name="extra" value="Podno grejanje">
+                        <label for="form-selector-extra-floorheating">Podno grejanje</label><br>
+
+                        <input type="checkbox" id="form-selector-extra-breakers" name="extra" value="Osigurači">
+                        <label for="form-selector-extra-breakers">Osigurači</label><br>
+
+                        <input type="checkbox" id="form-selector-extra-grounding" name="extra" value="Uzemljenje">
+                        <label for="form-selector-extra-grounding">Uzemljenje</label><br>
+
+                        <input type="checkbox" id="form-selector-extra-groundinglightning" name="extra" value="Gromobrani">
+                        <label for="form-selector-extra-groundinglightning">Gromobrani</label><br>
+                    </div>
+                </div>
+            </div>
+            <label for="form-name">Ime, prezime: </label>
+            <input type="text" required id="form-name">
+            <label for="form-phone">Kontakt telefon: </label>
+            <input type="tel" required id="form-phone">
+            <label for="form-email">E-mail adresa: </label>
+            <input type="email" required id="form-email">
+            <input type="submit" id="form-submit" value="Posalji">
         </form>
         <iframe id="footer-map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2823.277964748588!2d20.202172977215564!3d44.95834417972392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a5935ad24846f%3A0xc8b832e2d76212d5!2sMaximus%20Security!5e0!3m2!1sen!2srs!4v1723212001408!5m2!1sen!2srs"

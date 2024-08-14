@@ -584,6 +584,7 @@ footer
 
     gap: 50px;
     display: flex;
+    flex-wrap: wrap-reverse;
     flex-direction: row;
     justify-content: space-evenly;
 }
@@ -638,4 +639,65 @@ footer a:hover
 footer a:hover::after
 {
     width: 100%;
+}
+
+form {
+    box-shadow: 0px 0px 10px var(--color-gray);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form hr {
+    width: 100%;
+    height: 2px;
+    border-width: 0px;
+    background-color: var(--color-red);
+    margin: 0px auto 2px auto;
+}
+
+form h1 {
+    font-size: 18px;
+    margin: 0px;
+}
+
+#form-submit {
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px !important;
+
+    cursor: pointer;
+    font-size: 14px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-red);
+}
+
+#form-submit:hover {
+    font-weight: bold;
+    color: var(--color-white);
+    background-color: var(--color-red);
+    border: 1px solid var(--color-black);
+}
+
+#form-selectors {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+#form-selectors label,input {
+    cursor: pointer;
+}
+
+#form-selectors h2 {
+    font-size: 15px;
+}
+
+#form-selectors .wrapper {
+    max-height: 110px;
+}
+
+#form-selectors-extra .wrapper {
+    overflow-y: scroll;
 }
