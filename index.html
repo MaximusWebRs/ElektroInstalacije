@@ -2,6 +2,9 @@
 
 <head>
     <title>Maximus Instalacije</title>
+
+    <meta charset="UTF-8">
+
     <link href="css/index.css" rel="stylesheet">
     <script src="js/main.js"></script>
     <script src="js/header.js"></script>
@@ -252,21 +255,21 @@
                 Telekomunikacije
             </a>
         </nav>
-        <form onsubmit="sendMail();">
+        <form onsubmit="sendMail(); return false;" method="post">
             <h1>
-                Posaljite upit
+                Pošaljite upit
             </h1>
             <hr>
             <div id="form-selectors">
                 <div id="form-selectors-offer">
                     <h2>Tip objekta</h2>
                     <div class="wrapper">
-                        <input type="radio" id="form-selector-offer-residential" name="offer" value="Residential" checked>
+                        <input type="radio" id="form-selector-offer-residential" name="offer" value="Stambeni" checked>
                         <label for="form-selector-offer-residential">Stambeni</label><br>
-                        <input type="radio" id="form-selector-offer-industrial" name="offer" value="Industrial">
+                        <input type="radio" id="form-selector-offer-industrial" name="offer" value="Industrijski">
                         <label for="form-selector-offer-industrial">Industrijski</label><br>
-                        <input type="radio" id="form-selector-offer-household" name="offer" value="Household">
-                        <label for="form-selector-offer-household">Kuca</label><br>
+                        <input type="radio" id="form-selector-offer-household" name="offer" value="Kuća">
+                        <label for="form-selector-offer-household">Kuća</label><br>
                     </div>
                 </div>
                 <div id="form-selectors-extra">
