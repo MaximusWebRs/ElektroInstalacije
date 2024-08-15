@@ -6,12 +6,14 @@ function initMailSender() {
     });
     formElement = document.querySelector("form");
     formElement.reset();
-
-    Cookies.set('test', 'test');
-    console.log(Cookies.get('test'));
 }
 
 function sendMail(event) {
+    if (Cookies.get("form-sent")) {
+        alert("Možete poslati maksimalno jedan upit dnevno. Ukoliko imate dodatnih pitanja molim Vas da pozovete na naš kontakt telefon ili nam pošaljite e-mail.");
+        event.preventDefault();
+        return;
+    }
     let params;
     try {
         params = gatherParameters();
@@ -22,7 +24,7 @@ function sendMail(event) {
     }
     emailjs.send("service_elektro", "template_elektro", params).then(
         (response) => {
-
+            Cookies.set("form-sent", "sent", { expires: 1 });
             alert('Upit je uspešno poslat. Hvala Vam!');
         },
         (error) => {
