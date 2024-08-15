@@ -25,6 +25,7 @@ function sendMail(event) {
     emailjs.send("service_elektro", "template_elektro", params).then(
         (response) => {
             Cookies.set("form-sent", "sent", { expires: 1 });
+            formElement.reset();
             alert('Upit je uspešno poslat. Hvala Vam!');
         },
         (error) => {
