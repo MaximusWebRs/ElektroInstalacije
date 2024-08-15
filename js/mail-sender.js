@@ -1,16 +1,41 @@
+let formElement;
 
-function sendMail() {
-    emailjs.send("service_elektro", "template_elektro", gatherParameters()).then(
+function initMailSender() {
+    emailjs.init({
+        publicKey: "bamynrPBhbxBJCVrb",
+    });
+    formElement = document.querySelector("form");
+    formElement.reset();
+
+    Cookies.set('test', 'test');
+    console.log(Cookies.get('test'));
+}
+
+function sendMail(event) {
+    let params;
+    try {
+        params = gatherParameters();
+    } catch (e) {
+        alert(e);
+        event.preventDefault();
+        return;
+    }
+    emailjs.send("service_elektro", "template_elektro", params).then(
         (response) => {
-          alert('Upit je uspešno poslat. Hvala Vam!');
+
+            alert('Upit je uspešno poslat. Hvala Vam!');
         },
         (error) => {
-          alert("Upit nije poslat. Molimo Vas da probate ponovo kasnije ili da nas kontaktirate direktno.");
+            alert("Upit nije poslat. Molimo Vas da probate ponovo kasnije ili da nas kontaktirate direktno.");
         });
+    event.preventDefault();
 }
 
 function gatherParameters() {
     let checkedServices = document.querySelectorAll("input[name='extra']:checked");
+    if (checkedServices.length == 0) {
+        throw new Error("Niste odabrali ni jednu uslugu.");
+    }
     let theServices = [];
     for (let i = 0; i < checkedServices.length; i++) {
         theServices[i] = checkedServices[i].value;

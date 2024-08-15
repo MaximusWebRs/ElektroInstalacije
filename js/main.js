@@ -9,7 +9,6 @@ function showElement(element, show) {
     }
 }
 
-let pageTargetScrollElements = [];
 let fixedScrollElements = [];
 let horizontalScrollers = [];
 let customScrollHandlers = new Array();
@@ -23,7 +22,6 @@ function initScroll() {
         left: 0,
         behaviour: 'instant',
     });
-    initPageTargetScrolls();
     initHorizontalScrollers();
     initFixedScrolls();
 }
@@ -31,13 +29,6 @@ function initScroll() {
 function handleScroll() {
     handleFixedScrolls();
     handleCustomScrolls();
-}
-
-function initPageTargetScrolls() {
-    let pageScrolls = document.querySelectorAll("[data-page-scroll-target]");
-    for (let i = 0; i < pageScrolls.length; i++) {
-        pageTargetScrollElements[i] = new PageTargetScroll(pageScrolls[i]);
-    }
 }
 
 function initFixedScrolls() {
@@ -110,16 +101,6 @@ function handleHorizontalScrollerResize(scroller)
     if (scroller.timeoutId == 0) {
         switchHorizontalScrollerLoop(scroller);
     }
-}
-
-function PageTargetScroll(element) {
-    this.element = element;
-    this.targetElement = document.querySelector(this.element.getAttribute("data-page-scroll-target"));
-    this.offset = parseInt(this.element.getAttribute("data-page-scroll-offset"));
-    if (!this.offset) {
-        this.offset = 0;
-    }
-    this.element.addEventListener("click", () => { scrollTo(0, this.targetElement.offsetTop + this.offset); });
 }
 
 function HorizontalScroller(element) {
