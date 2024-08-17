@@ -1,9 +1,11 @@
 <html>
 
 <head>
-    <title>Maximus Instalacije</title>
+    <title>Maximus Elektro Instalacije</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="css/index.css" rel="stylesheet">
     <script src="js/main.js"></script>
@@ -24,9 +26,30 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
         <div id="header-global">
             <div id="header-name">
                 <img src="images/logo.jpg">
-                <h4>elektro instalacije od 2020. godine</h4>
+                <h1>ELEKTRO INSTALACIJE</h1>
             </div>
             <nav id="header-websites-navigation">
+                <a href="https://vrata-metal-detektor.rs/">
+                    Vrata Metal Detektori
+                </a>
+                <a href="maximus-video-nadzor.com">
+                    Video nadzor
+                </a>
+                <a href="maximus-dojava-pozara.com">
+                    Dojava pozara
+                </a>
+                <a href="maximus-telekom.com">
+                    Telekomunikacije
+                </a>
+            </nav>
+            <div id="header-websites-menu-button">
+                <img id="header-websites-menu-open" class="active" src="images/icons/globe.webp">
+                <img id="header-websites-menu-close" class="inactive" src="images/icons/x-white.webp">
+            </div>
+            <nav id="header-websites-menu">
+                <a href="https://vrata-metal-detektor.rs/">
+                    Vrata Metal Detektori
+                </a>
                 <a href="maximus-video-nadzor.com">
                     Video nadzor
                 </a>
@@ -55,8 +78,21 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
     </header>
     <section id="slideshow">
         <div id="slideshow-images">
-            <img src="images/slideshow/test-1.jpg" class="active">
-            <img src="images/slideshow/test-2.jpg">
+            <picture class="active">
+                <source srcset="images/slideshow/slideshow-elektroinstalacije-vertical.webp" media="(max-width: 800px)">
+                <source srcset="images/slideshow/slideshow-elektroinstalacije.webp" media="(min-width: 800px)">
+                <img src="images/slideshow/slideshow-elektroinstalacije.webp">
+            </picture>
+            <picture class="inactive">
+                <source srcset="images/slideshow/slideshow-breakers-vertical.webp" media="(max-width: 800px)">
+                <source srcset="images/slideshow/slideshow-breakers.webp" media="(min-width: 800px)">
+                <img src="images/slideshow/slideshow-breakers.webp">
+            </picture>
+            <picture class="inactive">
+                <source srcset="images/slideshow/slideshow-outlets-vertical.webp" media="(max-width: 800px)">
+                <source srcset="images/slideshow/slideshow-outlets.webp" media="(min-width: 800px)">
+                <img src="images/slideshow/slideshow-outlets.webp">
+            </picture>
         </div>
         <div id="slideshow-controls">
         </div>
@@ -190,6 +226,19 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                 </p>
             </article>
             <article>
+                <h2>Razvodni ormani</h2>
+                <a>Procitaj jos...</a>
+                <img src="images/extra offers/distribution-cabinet.jpg">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                    Morbi quis tincidunt justo, eget rhoncus risus.
+                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                    Proin in commodo metus.
+                </p>
+            </article>
+            <article>
                 <h2>Uzemljenje</h2>
                 <a>Procitaj jos...</a>
                 <img src="images/extra offers/ground.jpg">
@@ -215,6 +264,19 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                     Proin in commodo metus.
                 </p>
             </article>
+            <article>
+                <h2>Priprema gradilišta</h2>
+                <a>Procitaj jos...</a>
+                <img src="images/extra offers/construction-site.jpg">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Etiam in tellus sagittis, lobortis purus vitae, pulvinar nibh.
+                    Morbi quis tincidunt justo, eget rhoncus risus.
+                    Proin est nisl, porta ac ligula in, pharetra lobortis nunc.
+                    Aenean est odio, blandit id lobortis at, lacinia ut metus.
+                    Proin in commodo metus.
+                </p>
+            </article>
         </div>
         <div id="extra-offers-preview">
             <img>
@@ -222,7 +284,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                 <h2></h2>
                 <p></p>
             </article>
-            <div id="extra-offers-preview-close" onclick="hideExtraOfferPreview()"><img src="images/x.png"></div>
+            <div id="extra-offers-preview-close" onclick="hideExtraOfferPreview()"><img src="images/icons/x.png"></div>
         </div>
     </section>
     <section id="partners" class="scroller-w-images">
@@ -251,6 +313,8 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                     <div class="wrapper">
                         <input type="radio" id="form-selector-offer-residential" name="offer" value="Stambeni" checked>
                         <label for="form-selector-offer-residential">Stambeni</label><br>
+                        <input type="radio" id="form-selector-offer-commercial" name="offer" value="Komercijalni">
+                        <label for="form-selector-offer-commercial">Komercijalni</label><br>
                         <input type="radio" id="form-selector-offer-industrial" name="offer" value="Industrijski">
                         <label for="form-selector-offer-industrial">Industrijski</label><br>
                         <input type="radio" id="form-selector-offer-household" name="offer" value="Kuća">
@@ -277,6 +341,10 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                             value="Podno grejanje">
                         <label for="form-selector-extra-floorheating">Podno grejanje</label><br>
 
+                        <input type="checkbox" id="form-selector-extra-distributioncabinet" name="extra"
+                            value="Razvodni orman">
+                        <label for="form-selector-extra-distributioncabinet">Razvodni orman</label><br>
+
                         <input type="checkbox" id="form-selector-extra-breakers" name="extra" value="Osigurači">
                         <label for="form-selector-extra-breakers">Osigurači</label><br>
 
@@ -286,6 +354,10 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                         <input type="checkbox" id="form-selector-extra-groundinglightning" name="extra"
                             value="Gromobrani">
                         <label for="form-selector-extra-groundinglightning">Gromobrani</label><br>
+
+                        <input type="checkbox" id="form-selector-extra-constructionsitepreparations" name="extra"
+                            value="Priprema gradilišta">
+                        <label for="form-selector-extra-constructionsitepreparations">Priprema gradilišta</label><br>
                     </div>
                 </div>
             </div>
@@ -297,18 +369,6 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
             <input type="email" required id="form-email">
             <input type="submit" id="form-submit" value="Pošalji">
         </form>
-        <nav id="footer-websites">
-            <h2>NAŠA REŠENJA</h2>
-            <a href="maximus-video-nadzor.com">
-                Video nadzor
-            </a>
-            <a href="maximus-dojava-pozara.com">
-                Dojava pozara
-            </a>
-            <a href="maximus-telekom.com">
-                Telekomunikacije
-            </a>
-        </nav>
         <section id="footer-about">
             <h2>O NAMA</h2>
             <p>
@@ -321,11 +381,23 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
             </p>
             <section id="footer-contact">
                 <h2>KONTAKT</h2>
-                <a href="mailto:maximus.security@gmail.com">maximus.security@gmail.com</a>
-                <a href="tel:+381616161">+381-6161-616</a>
-                <a href="https://maps.app.goo.gl/EcN9rNwpMbKkXXKz7">Cara Dušana 150</a>
+                <a href="mailto:maximus.security@gmail.com" id="footer-contact-mail">maximus.secure@gmail.com</a>
+                <a href="tel:+38162421515" id="footer-contact-phone">+381/62-421-515</a>
+                <a href="https://maps.app.goo.gl/EcN9rNwpMbKkXXKz7" id="footer-contact-location">Cara Dušana 150</a>
             </section>
         </section>
+        <nav id="footer-websites">
+            <h2>NAŠA REŠENJA</h2>
+            <a href="maximus-video-nadzor.com">
+                Video nadzor
+            </a>
+            <a href="maximus-dojava-pozara.com">
+                Dojava pozara
+            </a>
+            <a href="maximus-telekom.com">
+                Telekomunikacije
+            </a>
+        </nav>
     </footer>
 </body>
 

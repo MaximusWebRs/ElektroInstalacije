@@ -4,8 +4,16 @@ let headerFullOffsetHeight;
 let pageNavigationLinks;
 let activePageLink;
 
+let responsiveMenuOpen = false;
+let responsiveMenu;
+let openResponsiveMenuButton;
+let closeResponsiveMenuButton;
+
 function initHeader() {
     header = document.querySelector("header");
+
+    initResponsiveMenu();
+
     headerFullOffsetHeight = header.offsetHeight;
     let links = document.getElementById("page-navigation").children;
     pageNavigationLinks = [links.length];
@@ -13,6 +21,38 @@ function initHeader() {
         pageNavigationLinks[i] = new PageNavigationLink(links[i]);
     }
     registerCustomScrollHandler(new CustomScrollHandler(handlePageScrolling));
+}
+
+function initResponsiveMenu() {
+    responsiveMenu = document.getElementById("header-websites-menu");
+    openResponsiveMenuButton = document.getElementById("header-websites-menu-open");
+    closeResponsiveMenuButton = document.getElementById("header-websites-menu-close");
+
+    let button = document.getElementById("header-websites-menu-button");
+    button.addEventListener("click", () => {
+        openResponsiveMenu(!responsiveMenuOpen);
+    });
+    openResponsiveMenu(false);
+}
+
+function openResponsiveMenu(open) {
+    responsiveMenuOpen = open;
+    if (open) {
+        openResponsiveMenuButton.classList.remove("active");
+        openResponsiveMenuButton.classList.add("inactive");
+        closeResponsiveMenuButton.classList.remove("inactive");
+        closeResponsiveMenuButton.classList.add("active");
+        responsiveMenu.classList.add("active");
+        responsiveMenu.classList.remove("inactive");
+    }
+    else {
+        closeResponsiveMenuButton.classList.remove("active");
+        closeResponsiveMenuButton.classList.add("inactive");
+        openResponsiveMenuButton.classList.remove("inactive");
+        openResponsiveMenuButton.classList.add("active");
+        responsiveMenu.classList.remove("active");
+        responsiveMenu.classList.add("inactive");
+    }
 }
 
 function handlePageScrolling() {

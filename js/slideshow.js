@@ -1,5 +1,9 @@
 const slideDuration = 10000;
+const imageRatio = 3;
+const imageRatioVertical = 0.8;
+const verticalSwitch = 800;
 
+let imagesContainer
 let slideImages;
 let slideTransitionDuration;
 
@@ -9,7 +13,7 @@ let slideTransitioning = false;
 
 function initSlideshow()
 {
-    let imagesContainer = document.getElementById("slideshow-images")
+    imagesContainer = document.getElementById("slideshow-images")
     slideTransitionDuration = parseInt(window.getComputedStyle(imagesContainer).getPropertyValue("--slideshow-transition-duration"));
     let images = imagesContainer.children;
     slideImages = [images.length];
@@ -24,7 +28,17 @@ function initSlideshow()
             showElement(slideImages[i].control, false);
         }
     }
+    determineSlideshowHeight();
+    window.addEventListener("resize", determineSlideshowHeight);
     startLoop();
+}
+
+function determineSlideshowHeight() {
+    if (window.innerWidth > verticalSwitch) {
+        imagesContainer.style.height = Math.floor(window.innerWidth / imageRatio);
+        return;
+    }
+    imagesContainer.style.height = Math.floor(window.innerWidth / imageRatioVertical);
 }
 
 function createSlideshowControl(imageIndex) {

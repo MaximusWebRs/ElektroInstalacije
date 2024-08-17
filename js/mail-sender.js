@@ -11,6 +11,7 @@ function initMailSender() {
 function sendMail(event) {
     if (Cookies.get("form-sent")) {
         alert("Možete poslati maksimalno jedan upit dnevno. Ukoliko imate dodatnih pitanja molim Vas da pozovete na naš kontakt telefon ili nam pošaljite e-mail.");
+        formElement.reset();
         event.preventDefault();
         return;
     }
