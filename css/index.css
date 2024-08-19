@@ -838,8 +838,12 @@ form h1 {
 /* START OFFER */
 
 @media only screen and (max-width: 1300px) {
-    #offer article {
+    #offer article.left {
         margin: 0px 0px 0px 100px;
+    }
+
+    #offer article.right {
+        margin: 0px 100px 0px 0px;
     }
 
     #offer article p {
@@ -853,7 +857,11 @@ form h1 {
         gap: 30px;
     }
 
-    #offer article {
+    #offer article.left {
+        margin: 0px 40px 0px 40px;
+    }
+
+    #offer article.right {
         margin: 0px 40px 0px 40px;
     }
 
@@ -1133,7 +1141,7 @@ form h1 {
         z-index: 10;
         position: absolute;
         top: 50px;
-        right: 0px;
+        right: 5px;
 
         padding: 10px 10px 10px 20px;
 
