@@ -18,14 +18,14 @@ function showExtraOfferPreview(exof) {
     extraOffersPreview.querySelector("img").setAttribute("src", exof.imageSource);
     extraOffersPreview.querySelector("article").querySelector("h2").textContent = exof.header2;
     extraOffersPreview.querySelector("article").querySelector("p").textContent = exof.paragraph;
-    extraOffersPreview.classList.add("active");
+    showElement(extraOffersPreview, true);
     activeExtraOffer = exof;
-    scrollTo(0, (extraOffersPreview.offsetTop + parseInt(window.getComputedStyle(extraOffersPreview).getPropertyValue("--open-height")) + 20) - window.innerHeight);
+    scrollTo(0, (extraOffersPreview.offsetTop - 60));
 }
 
 function hideExtraOfferPreview() {
     activeExtraOffer = null;
-    extraOffersPreview.classList.remove("active");
+    showElement(extraOffersPreview, false);
     scrollTo(0, document.getElementById("extra-offers").offsetTop);
 }
 
