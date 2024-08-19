@@ -75,6 +75,11 @@ header a::after {
     line-height: 1;
 }
 
+#header-name h1 p {
+    font-weight: normal;
+    font-size: 12px;
+}
+
 #header-websites-menu-close {
     display: none;
 }
@@ -116,7 +121,6 @@ header a::after {
     position: static;
     flex-direction: row;
     align-items: flex-start;
-    overflow: hidden;
 
     font-size: 13px;
     font-weight: bold;
@@ -1201,7 +1205,7 @@ form h1 {
     }
 
     #page-navigation-menu {
-        z-index: 10;
+        z-index: 20;
         position: absolute;
         top: 40px;
 
