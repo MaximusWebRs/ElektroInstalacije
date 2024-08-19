@@ -30,27 +30,6 @@ header {
     padding: 5px 10px 0px 10px;
 }
 
-#header-name {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 0px 0px 0px 15px;
-}
-
-#header-name img {
-    height: 80px;
-    padding: 5px 0px 0px 0px;
-}
-
-#header-name h1 {
-    margin: 0px;
-    padding-top: 15px;
-    font-size: 26px;
-    line-height: 1;
-}
-
 header a {
     position: relative;
     text-decoration: none;
@@ -82,6 +61,27 @@ header a:hover::after {
     gap: 40px;
 }
 
+#header-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0px 0px 0px 15px;
+}
+
+#header-name img {
+    height: 80px;
+    padding: 5px 0px 0px 0px;
+}
+
+#header-name h1 {
+    margin: 0px;
+    padding-top: 15px;
+    font-size: 26px;
+    line-height: 1;
+}
+
 #header-websites-menu-close {
     display: none;
 }
@@ -110,14 +110,24 @@ header a:hover::after {
     height: 1px;
 }
 
+#page-navigation-menu-button {
+    display: none;
+}
+
+#page-navigation-menu {
+    display: none;
+}
+
 #page-navigation {
     display: flex;
     position: static;
-    font-size: 13px;
-    font-weight: bold;
-    gap: 50px;
     flex-direction: row;
     align-items: flex-start;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    gap: 50px;
     padding: 10px 0px 0px 45px;
 }
 
@@ -150,6 +160,10 @@ header a:hover::after {
     bottom: -5px;
     left: 0px;
     height: 3px;
+}
+
+#page-navigation-menu {
+    display: none;
 }
 
 body > section {
@@ -311,6 +325,7 @@ body > section {
     padding-top: 80px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     gap: 100px;
 }
 
@@ -804,11 +819,12 @@ form h1 {
     }
 
     #header-websites-menu-button {
-        position: relative;
+        position: absolute;
         display: block;
         width: 45px;
         height: 45px;
-        margin-top: 5px;
+        right: 5px;
+        top: 5px;
 
         overflow: hidden;
         cursor: pointer;
@@ -872,5 +888,103 @@ form h1 {
 
     #header-websites-menu.inactive {
         transform: scaleY(0);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    header {
+        gap: 10px;
+    }
+
+    #page-navigation {
+        padding: 10px 0px 0px 0px;
+
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #header-global {
+        gap: 0px;
+    }
+
+    #header-name {
+        padding: 0px;
+    }
+
+    #header-name img {
+        height: 60px;
+    }
+
+    #header-name h1 {
+        font-size: 20px;
+        padding-right: 55px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #page-navigation {
+        gap: 25px;
+        padding-left: 20px;
+        justify-content: flex-start;
+
+        position: relative;
+    }
+
+    #page-navigation > a.inactive {
+        display: none;
+    }
+
+    #page-navigation-menu-button {
+        display: block;
+    }
+
+    #page-navigation-menu-button img {
+        height: 15px;
+    }
+
+    #page-navigation-menu-button img.active {
+        display: block;
+    }
+
+    #page-navigation-menu-button img.inactive {
+        display: none;
+    }
+
+    #page-navigation-menu {
+        z-index: 10;
+        position: absolute;
+        top: 40px;
+
+        padding: 15px 20px 5px 10px;
+
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        border-radius: 2px;
+        box-shadow: 0px 0px 2px var(--color-gray);
+        background-color: var(--color-white);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: all 0.2s;
+    }
+
+    #page-navigation-menu.active {
+        transform: scaleY(1);
+    }
+
+    #page-navigation-menu.inactive {
+        transform: scaleY(0);
+    }
+
+    #page-navigation-menu a {
+        transition: 0s all;
+    }
+
+    #page-navigation-menu a::after {
+        height: 0px;
     }
 }

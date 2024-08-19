@@ -47,33 +47,35 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                 <img id="header-websites-menu-close" class="inactive" src="images/icons/x-white.webp">
             </div>
             <nav id="header-websites-menu">
-                <a href="https://vrata-metal-detektor.rs/">
-                    Vrata Metal Detektori
-                </a>
-                <a href="maximus-video-nadzor.com">
-                    Video nadzor
-                </a>
-                <a href="maximus-dojava-pozara.com">
-                    Dojava pozara
-                </a>
-                <a href="maximus-telekom.com">
-                    Telekomunikacije
-                </a>
+                <a href="https://vrata-metal-detektor.rs/">Vrata Metal Detektori</a>
+                <a href="maximus-video-nadzor.com">Video nadzor</a>
+                <a href="maximus-dojava-pozara.com">Dojava pozara</a>
+                <a href="maximus-telekom.com">Telekomunikacije</a>
             </nav>
         </div>
         <nav id="page-navigation" data-scroll-fixed>
-            <a data-page-scroll-target="header">
-                POČETAK
-            </a>
-            <a data-page-scroll-target="#offer" data-page-scroll-offset="40">
-                PONUDA
-            </a>
-            <a data-page-scroll-target="#extra-offers" data-page-scroll-offset="80">
-                OSTALE USLUGE
-            </a>
-            <a data-page-scroll-target="footer">
-                KONTAKT
-            </a>
+            <a data-page-scroll-target="header" class="active">
+                POČETAK</a>
+            <a data-page-scroll-target="#offer" class="inactive" data-page-scroll-offset="40">
+                PONUDA</a>
+            <a data-page-scroll-target="#extra-offers" class="inactive" data-page-scroll-offset="80">
+                OSTALE USLUGE</a>
+            <a data-page-scroll-target="footer" class="inactive" data-page-scroll-offset="60">
+                KONTAKT</a>
+            <div id="page-navigation-menu-button">
+                <img id="page-navigation-menu-open" class="active" src="images/icons/triangle-red-down.webp">
+                <img id="page-navigation-menu-close" class="inactive" src="images/icons/triangle-up.webp">
+            </div>
+            <nav id="page-navigation-menu">
+                <a data-page-scroll-target-peripheral="header">
+                    POČETAK</a>
+                <a data-page-scroll-target-peripheral="#offer">
+                    PONUDA</a>
+                <a data-page-scroll-target-peripheral="#extra-offers">
+                    OSTALE USLUGE</a>
+                <a data-page-scroll-target-peripheral="footer">
+                    KONTAKT</a>
+            </nav>
         </nav>
     </header>
     <section id="slideshow">
@@ -130,7 +132,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                 Morbi lectus arcu, viverra vel venenatis at, luctus et turpis.
                 Sed hendrerit massa sed mi tincidunt feugiat.
             </p>
-            <a data-page-scroll-target="footer">POSALJITE UPIT ZA CENE</a>
+            <a data-page-scroll-target-peripheral="footer">POSALJITE UPIT ZA CENE</a>
             <img src="images/offers/industrial.webp">
         </article>
         <article class="right">
@@ -151,7 +153,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                 Morbi lectus arcu, viverra vel venenatis at, luctus et turpis.
                 Sed hendrerit massa sed mi tincidunt feugiat.
             </p>
-            <a data-page-scroll-target="footer">POSALJITE UPIT ZA CENE</a>
+            <a data-page-scroll-target-peripheral="footer">POSALJITE UPIT ZA CENE</a>
             <img src="images/offers/apartments.webp">
         </article>
     </section>
