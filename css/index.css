@@ -857,11 +857,7 @@ form h1 {
         gap: 30px;
     }
 
-    #offer article.left {
-        margin: 0px 40px 0px 40px;
-    }
-
-    #offer article.right {
+    #offer :is(article.left,article.right) {
         margin: 0px 40px 0px 40px;
     }
 
@@ -880,7 +876,7 @@ form h1 {
 }
 
 @media only screen and (max-width: 600px) {
-    #offer article {
+    #offer :is(article.left,article.right) {
         padding: 0px 0px 60px 0px;
     }
 
@@ -906,7 +902,7 @@ form h1 {
         padding-top: 15px;
     }
 
-    #offer article {
+    #offer :is(article.left,article.right) {
         margin: 0px 20px 0px 20px;
     }
 
@@ -916,7 +912,7 @@ form h1 {
 }
 
 @media only screen and (max-width: 400px) {
-    #offer article {
+    #offer :is(article.left,article.right) {
         margin: 0px 10px 0px 10px;
     }
 }
