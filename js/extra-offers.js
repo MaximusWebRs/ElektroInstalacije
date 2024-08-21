@@ -9,6 +9,8 @@ function initExtraOffers() {
     for (let i = 0; i < exofs.length; i++) {
         extraOffers[i] = new ExtraOffer(exofs[i]);
     }
+
+    console.log(fetch("../images/extra offers/").body);
 }
 
 function showExtraOfferPreview(exof) {
@@ -17,7 +19,8 @@ function showExtraOfferPreview(exof) {
     }
     extraOffersPreview.querySelector("img").setAttribute("src", exof.imageSource);
     extraOffersPreview.querySelector("article").querySelector("h2").textContent = exof.header2;
-    extraOffersPreview.querySelector("article").querySelector("p").textContent = exof.paragraph;
+    extraOffersPreview.querySelector("article").querySelector("p").remove();
+    extraOffersPreview.querySelector("article").appendChild(exof.paragraph.cloneNode(true));
     showElement(extraOffersPreview, true);
     activeExtraOffer = exof;
     scrollTo(0, (extraOffersPreview.offsetTop - 60));
@@ -32,7 +35,7 @@ function hideExtraOfferPreview() {
 function ExtraOffer(element) {
     this.element = element;
     this.header2 = element.querySelector("h2").textContent;
-    this.paragraph = element.querySelector("p").textContent;
+    this.paragraph = element.querySelector("p");
     this.imageSource = element.querySelector("img").getAttribute("src");
     element.addEventListener("click", () => { showExtraOfferPreview(this); });
 }

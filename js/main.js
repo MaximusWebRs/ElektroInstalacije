@@ -9,6 +9,7 @@ function showElement(element, show) {
     }
 }
 
+let enterScreenScrolls = [];
 let fixedScrollElements = [];
 let horizontalScrollers = [];
 let customScrollHandlers = new Array();
@@ -22,11 +23,13 @@ function initScroll() {
         left: 0,
         behaviour: 'instant',
     });
+    initEnterScreenScroll();
     initHorizontalScrollers();
     initFixedScrolls();
 }
 
 function handleScroll() {
+    handleEnterScreenScrolls();
     handleFixedScrolls();
     handleCustomScrolls();
 }
@@ -100,6 +103,39 @@ function handleHorizontalScrollerResize(scroller)
     scroller.element.style.setProperty("--scroller-scroll-amount", amount.toString().concat("px"));
     if (scroller.timeoutId == 0) {
         switchHorizontalScrollerLoop(scroller);
+    }
+}
+
+function initEnterScreenScroll() {
+    let scrolls = document.querySelectorAll("[data-screen-enter-scroll]");
+    for (const scroll of scrolls) {
+        enterScreenScrolls.push(new EnterScreenScroll(scroll));
+    }
+}
+
+function handleEnterScreenScrolls() {
+    //if (scroll.element.getBoundingClientRect().top + scroll.offset <= window.scrollY + window.innerHeight) 
+    for (const scroll of enterScreenScrolls) {
+        if (scroll.element.getBoundingClientRect().top + scroll.offset <= window.innerHeight) {
+            showElement(scroll.element, true);
+        } else if (scroll.mode == "show-multi") {
+            showElement(scroll.element, false);
+        }
+    }
+}
+
+function EnterScreenScroll(element) {
+    this.element = element;
+    this.mode = this.element.getAttribute("data-screen-enter-scroll-mode");
+    if (!this.mode) {
+        this.mode = "show-once";
+    } else if (this.mode != "show-once" && this.mode != "show-multi") {
+        this.mode = "show-once";
+        console.error("Screen enter scroll elements can only be of modes 'show-once' and 'show-multi'.");
+    }
+    this.offset = parseInt(this.element.getAttribute("data-screen-enter-scroll-offset"));
+    if (!this.offset) {
+        this.offset = 0;
     }
 }
 

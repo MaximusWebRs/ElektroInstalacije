@@ -12,6 +12,7 @@
     <script src="js/header.js"></script>
     <script src="js/slideshow.js"></script>
     <script src="js/extra-offers.js"></script>
+    <script src="js/numberCounter.js"></script>
     <script src="
 https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
 "></script>
@@ -20,7 +21,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
     <script src="js/mail-sender.js"></script>
 </head>
 
-<body onload="initScroll(); initHeader(); initSlideshow(); initExtraOffers(); initMailSender();"
+<body onload="initScroll(); initHeader(); initSlideshow(); initExtraOffers(); initNumberCounter(); initMailSender();"
     onscroll="handleScroll()">
     <header>
         <div id="header-global">
@@ -58,7 +59,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                 POČETAK</a>
             <a data-page-scroll-target="#offer" class="inactive" data-page-scroll-offset="40">
                 PONUDA</a>
-            <a data-page-scroll-target="#extra-offers" class="inactive" data-page-scroll-offset="80">
+            <a data-page-scroll-target="#extra-offers" class="inactive" data-page-scroll-offset="60">
                 OSTALE USLUGE</a>
             <a data-page-scroll-target="footer" class="inactive" data-page-scroll-offset="60">
                 KONTAKT</a>
@@ -102,16 +103,18 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
     <section id="manufacturers" class="scroller-w-images">
         <h1>PROIZVOĐAČI U NAŠOJ POUNDI</h1>
         <div id="manufacturers-wrapper" class="wrapper inactive" data-horizontal-scroller="15000ms">
-            <a href="https://www.aling-conel.com/sr/" target="_blank"><img
-                    src="images/manufacturers/aling-conel.webp"></a>
-            <a href="https://www.se.com/rs/sr/" target="_blank"><img
-                    src="images/manufacturers/schneider-electric.png"></a>
-            <a href="https://nopallux.rs/" target="_blank"><img src="images/manufacturers/nopallux.png"></a>
-            <a href="https://www.aling-conel.com/sr/" target="_blank"><img
-                    src="images/manufacturers/aling-conel.webp"></a>
-            <a href="https://www.se.com/rs/sr/" target="_blank"><img
-                    src="images/manufacturers/schneider-electric.png"></a>
-            <a href="https://nopallux.rs/" target="_blank"><img src="images/manufacturers/nopallux.png"></a>
+            <a><img src="images/manufacturers/aling-conel.webp"></a>
+            <a><img src="images/manufacturers/schneider-electric.png"></a>
+            <a><img src="images/manufacturers/iskra.webp"></a>
+            <a><img src="images/manufacturers/eti.webp"></a>
+            <a><img src="images/manufacturers/obbo.webp"></a>
+            <a><img src="images/manufacturers/bticino.webp"></a>
+            <a><img src="images/manufacturers/nopallux.png"></a>
+            <a><img src="images/manufacturers/aling-conel.webp"></a>
+            <a><img src="images/manufacturers/iskra.webp"></a>
+            <a><img src="images/manufacturers/eti.webp"></a>
+            <a><img src="images/manufacturers/obbo.webp"></a>
+            <a><img src="images/manufacturers/bticino.webp"></a>
         </div>
     </section>
     <section id="offer">
@@ -134,7 +137,7 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                 Redovno održavanje sistema je neophodno za očuvanje njegove funkcionalnosti i dugotrajnosti.
             </p>
             <a data-page-scroll-target-peripheral="footer">POSALJITE UPIT ZA CENE</a>
-            <img src="images/offers/industrial.webp">
+            <img src="images/offers/industrial.webp" class="inactive" data-screen-enter-scroll data-screen-enter-scroll-mode="show-multi" data-screen-enter-scroll-offset="200">
         </article>
         <article class="right">
             <h2>STAMBENE ELEKTRO INSTALACIJE</h2>
@@ -157,17 +160,48 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                 koje se mogu programirati, mogućnosti su gotovo neograničene.
             </p>
             <a data-page-scroll-target-peripheral="footer">POSALJITE UPIT ZA CENE</a>
-            <img src="images/offers/apartments.webp">
+            <img src="images/offers/apartments.webp" class="inactive" data-screen-enter-scroll data-screen-enter-scroll-mode="show-multi" data-screen-enter-scroll-offset="100">
         </article>
     </section>
-    <section id="certificates">
-
+    <section id="achievements">
+        <h2>Naša dostignuća</h2>
+        <div id="achievements-showcase">
+            <div class="achievement-showcase inactive" data-screen-enter-scroll data-screen-enter-scroll-mode="show-multi" data-screen-enter-scroll-offset="100">
+                <div class="image-wrapper">
+                    <img src="images/icons/building.png">
+                </div>
+                <h3>Aktivni projekti</h3>
+                <p data-number-counter-target="750" data-number-counter-duration="5000" data-number-counter-observe-target="parent"></p>
+            </div>
+            <div class="achievement-showcase inactive" data-screen-enter-scroll data-screen-enter-scroll-mode="show-multi" data-screen-enter-scroll-offset="100">
+                <div class="image-wrapper">
+                    <img src="images/icons/handshake.png">
+                </div>
+                <h3>Zadovoljnih klijentata</h3>
+                <p data-number-counter-target="2543" data-number-counter-duration="5000" data-number-counter-observe-target="parent"></p>
+            </div>
+            <div class="achievement-showcase inactive" data-screen-enter-scroll data-screen-enter-scroll-mode="show-multi" data-screen-enter-scroll-offset="100">
+                <div class="image-wrapper">
+                    <img src="images/icons/group.png">
+                </div>
+                <h3>Zaposleno radnika</h3>
+                <p data-number-counter-target="25" data-number-counter-duration="3000" data-number-counter-observe-target="parent"></p>
+            </div>
+            <div class="achievement-showcase inactive" data-screen-enter-scroll data-screen-enter-scroll-mode="show-multi" data-screen-enter-scroll-offset="100">
+                <div class="image-wrapper">
+                    <img src="images/icons/certificates.png">
+                </div>
+                <h3>Sertifikati</h3>
+                <p data-number-counter-target="14" data-number-counter-duration="3000" data-number-counter-observe-target="parent"></p>
+            </div>
+        </div>
     </section>
     <section id="extra-offers">
+        <h2>Takođe u našoj ponudi</h2>
         <div id="extra-offers-wrapper">
             <article>
                 <h2>Rasveta</h2>
-                <a>Procitaj jos...</a>
+                <a>Pročitaj jos...</a>
                 <img src="images/extra offers/lighting.jpg">
                 <p>
                     Moderna instalacija rasvete predstavlja više od osvetljavanja prostora; 
@@ -177,23 +211,40 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                     koje se prilagođava različitim aktivnostima i raspoloženjima. 
                     Od dinamičnog osvetljenja koje prati dnevni ritam do automatskog uključivanja 
                     svetla pri detekciji pokreta, mogućnosti su gotovo neograničene.
+                    <br><br>
+                    Nudimo širok spektar rasvetnih LED elemenata 
+                    koji se razlikuju po dizajnu, nameni, boji svetla, intenzitetu svetlosti i drugim karakteristikama. 
+                    Tako imamo LED ugradna i nadgradna sveetla, idealna za plafon ili zid, 
+                    koja pružaju diskretno i efikasno osvetljenje. LED trake, fleksibilne i prilagodljive, 
+                    često se koriste za dekorativno osvetljenje, dok LED reflektori, 
+                    s jakim i usmerenim snopom svetlosti, nalaze primenu u spoljnim prostorima 
+                    ili za naglašavanje određenih detalja, odnosno reklama. 
+                    Takođe postoje i LED bandere za uličnu rasvetu, a za vlažne prostorije vodootporne LED svetiljke.
                 </p>
             </article>
             <article>
                 <h2>Antipanic</h2>
-                <a>Procitaj jos...</a>
+                <a>Pročitaj jos...</a>
                 <img src="images/extra offers/antipanic.jpg">
                 <p>
                     Antipanična svetla su opremljena autonomnim izvorom napajanja, 
-                    kao što su baterije, koje omogućavaju da svetla funkcionišu i u slučaju nestanka struje. 
+                    koja omogućavaju da svetla funkcionišu i u slučaju nestanka struje. 
                     Aktiviranje ovih svetala se obično vrši automatski, 
                     putem detektora dima ili požara, ili ručno, pomoću sistema za uzbunjivanje. 
-                    Zakon Republike Srbije obavezuje da svi javni objekti imaju plan evakuacije i antipanic svetla.
+                    <br><br>
+                    Ova svetla se koriste, i obavezna su, u svim objektima gde se okuplja veći broj ljudi, 
+                    odnosno u školama, bolnicama, tržnim centrima, poslovnim uredima, skladištima robe, 
+                    hotelima, restoranima i drugim... Strelice na svetiljkama naglašavaju najbliži izlaz, 
+                    a kada su upaljene označavaju da u objektu boravište nije bezbeno.
+                    <br><br>
+                    Potrebno je redovno pregledati i održavati antipanic svetla, jer ukoliko dođe do kvara baterije koja se nalazi 
+                    u uređaju, svetlo se neće upaliti u slučaju nestanka struje ili ako je dovodni napon prekinut zbog požara 
+                    ili druge nepogode.
                 </p>
             </article>
             <article>
                 <h2>Galanterija</h2>
-                <a>Procitaj jos...</a>
+                <a>Pročitaj još...</a>
                 <img src="images/extra offers/outlets.jpg">
                 <p>
                     Modularna galanterija predstavlja savremeno rešenje za opremanje prostora prekidačima i utičnicama. 
@@ -201,55 +252,75 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                     modularni sistemi postaju sve popularniji izbor. 
                     Njihova sposobnost prilagođavanja različitim potrebama i stilovima, 
                     kao i mogućnost ugradnje dodatnih funkcija, čine ih idealnim za moderne domove i poslovne prostore.
+                    <br><br>
+                    Moduli koji su uključeni u ponudi su: unakrsni, naizmenični i obični prekidači, prekidači sa LED indikatorima, 
+                    tasteri za zvono, dimeri za regulisanje intenziteta svetla, standardne i "euro" utičnice, 
+                    telefonski, mrežni, USB, antenski i drugi prikljucči...
                 </p>
             </article>
             <article>
                 <h2>Podno Grejanje</h2>
-                <a>Procitaj jos...</a>
+                <a>Pročitaj još...</a>
                 <img src="images/extra offers/floor-heating.jpg">
                 <p>
                     Električno podno grejanje predstavlja modernu i energetski efikasnu metodu grejanja prostora. 
                     Grejni elementi, ugrađeni direktno u pod, ravnomerno zagrejavaju prostor, 
                     stvarajući ugodnu toplinu sličnu sunčevom zračenju. Ovaj sistem grejanja je jednostavan za instalaciju, 
                     tih u radu i omogućava preciznu regulaciju temperature.
+                    <br><br>
+                    Postoji više vrsta podnog grejanja koje uključuju grejni kablovi, grejne prostirke, 
+                    samolepljive grejni filmovi i grejne ploče. Svaki sistem ima svoje vrline i mane, 
+                    a onaj koji je Vama potreban se bira na osnovu veličine prostora, vrste podne obloge, 
+                    budžeta, ali i od toga da li se radi o novoju gradnji ili renovaciji.
+
                 </p>
             </article>
             <article>
                 <h2>Osigurači</h2>
-                <a>Procitaj jos...</a>
+                <a>Pročitaj još...</a>
                 <img src="images/extra offers/breakers.jpg">
                 <p>
                     Osigurači, prekidači i drugi zaštitni uređaji su poput "sigurnosnih ventila" u električnoj mreži. 
                     Njihova uloga je da automatski prekinu dovod električne energije u slučaju preopterećenja ili kvara, 
                     čime se sprečavaju ozbiljnije posledice. Pravilna ugradnja i redovno održavanje ovih uređaja su 
                     ključni za sigurnost i funkcionalnost električne instalacije.
+                    <br><br>
+                    Stari sistem topljivih osigurača je dobro poznati svima, naziv su dobili po tome što se 
+                    tanke žice tope unutar osigurača kada kroz njih prolazi prevelika struja, što znači da se 
+                    moraju svaki put menjati. Ovo ih čini nepouzdanim i zastarelim. Današnja tehnologija 
+                    automatskih osigurača je daleko sigurnija i efikasnija za zaštitu od preopterećenja, prenapona i
+                    kratkih spojeva.
                 </p>
             </article>
             <article>
                 <h2>Razvodni ormani</h2>
-                <a>Procitaj jos...</a>
+                <a>Pročitaj još...</a>
                 <img src="images/extra offers/distribution-cabinet.jpg">
                 <p>
                     Konstruisanje razvodnog ormara je složen proces koji zahteva stručnost. 
                     Počinje projektovanjem, nastavlja se odabirom materijala i montažom komponenti, 
                     a završava ožičenjem i ispitivanjem. 
                     Kvalitetno izveden razvodni ormar obezbediće sigurnost i optimalno funkcioniranje električne instalacije.
+                    <br><br>
+                    Izrađujemo rek serverske ormane, građevinske ormane za potrebe svakog gradilišta i razvodne ormane.
                 </p>
             </article>
             <article>
                 <h2>Uzemljenje</h2>
-                <a>Procitaj jos...</a>
+                <a>Pročitaj još...</a>
                 <img src="images/extra offers/ground.jpg">
                 <p>
                     Uzemljenje je ključno za električnu sigurnost. Zemne sonde, 
                     povezane pocinkovanim trakama za uzemljenje sa svim metalnim delovima instalacije, 
                     omogućavaju siguran odvod električne struje u zemlju u slučaju kvara ili atmosferskog pražnjenja kroz objekat. 
                     Postavljanjem uzemljenja štite se ljudi i uređaji od opasnih struja.
+                    <br><br>
+                    Nudimo Vam brzu i kvalitetnu uslugu postavljanja uzemljenja. Završavamo posao danas!
                 </p>
             </article>
             <article>
                 <h2>Gromobrani</h2>
-                <a>Procitaj jos...</a>
+                <a>Pročitaj još...</a>
                 <img src="images/extra offers/grounding-lightning.jpg">
                 <p>
                     Gromobrani su uređaji koji štite objekte od atmosferskog pražnjenja. 
@@ -257,17 +328,24 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
                     Uređaji za rano startovanje poboljšavaju zaštitu tako što 
                     omogućavaju da se gromovod aktivira pre direktnog udara groma. 
                     Svi elementi sistema se povezuju sa uzemljenjem kako bi se električni naboj sigurno odveo u zemlju.
+                    <br><br>
+                    Gromobrani su obavezni na svim objektima jer štite objekte da ne izgore, 
+                    štiti električne uređaje od pregorevanja, i što je najbitnije štiti ljude od ozbiljnih povreda i smrti.
                 </p>
             </article>
             <article>
                 <h2>Priprema gradilišta</h2>
-                <a>Procitaj jos...</a>
+                <a>Pročitaj još...</a>
                 <img src="images/extra offers/construction-site.jpg">
                 <p>
                     Ugradnja pripremne elektroinstalacije na gradilištu obuhvata 
                     postavljanje svih potrebnih elemenata za buduću električnu instalaciju, 
                     poput kanala, kutija, cevi, nosača, građevinskih razvodnih ormara, privremena rasvete, itd. 
                     Ovi poslovi se izvode u fazi gradnje, pre postavljanja završnih slojeva.
+                    <br><br>
+                    Pripremna elektroinstalacija je temelj za svaku električnu instalaciju. 
+                    Pravilno izvedena, olakšava buduće radove, smanjuje troškove i osigurava sigurnost. 
+                    Uključuje precizno planiranje, odabir kvalitetnih materijala i stručno izvođenje.
                 </p>
             </article>
         </div>
@@ -286,12 +364,13 @@ https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
         <div id="partners-wrapper" class="wrapper inactive" data-horizontal-scroller="15000ms">
             <a><img src="images/partners/metalflex.webp"></a>
             <a><img src="images/partners/antenall.png"></a>
+            <a><img src="images/partners/tehnoplast.webp"></a>
             <a><img src="images/partners/metalflex.webp"></a>
             <a><img src="images/partners/antenall.png"></a>
+            <a><img src="images/partners/tehnoplast.webp"></a>
             <a><img src="images/partners/metalflex.webp"></a>
             <a><img src="images/partners/antenall.png"></a>
-            <a><img src="images/partners/metalflex.webp"></a>
-            <a><img src="images/partners/antenall.png"></a>
+            <a><img src="images/partners/tehnoplast.webp"></a>
         </div>
     </section>
     <footer>

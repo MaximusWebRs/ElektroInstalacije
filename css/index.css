@@ -20,8 +20,6 @@ body {
     margin: 0px;
     font-family: poppins-medium;
     color: var(--color-black);
-    background: url("../images/arrows.jpg");
-    background-size: 0px;
 }
 
 header {
@@ -329,6 +327,20 @@ body > section {
     text-shadow: 0px 2px 10px var(--color-white);
 }
 
+#offer article img.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+#offer article img.inactive {
+    opacity: 0;
+    transform: translateY(200px);
+}
+
+#offer article img {
+    transition: all 2s;
+}
+
 #offer article {
     display: flex;
     flex-direction: column;
@@ -435,12 +447,107 @@ body > section {
     background-color: var(--color-red);
 }
 
+#achievements h2 {
+    margin: 60px auto 30px auto;
+}
+
+#achievements-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    gap: 60px 60px;
+    padding: 20px 0px 20px 0px;
+}
+
+.achievement-showcase {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+
+    min-width: 200px;
+    border-radius: 5px;
+    padding: 30px 20px 10px 20px;
+
+    box-shadow: 0px 0px 15px var(--color-gray);
+
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1s;
+}
+
+.achievement-showcase.inactive {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 2s;
+}
+
+.achievement-showcase.active {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 1s;
+}
+
+.achievement-showcase p {
+    margin: 0px 0px 25px 0px;
+    padding: 0px;
+    font-weight: bold;
+    font-size: 28px;
+    color: var(--color-red);
+}
+
+@keyframes achievement-showcase-image {
+    from { transform: rotate(0turn); }
+    to { transform: rotate(1turn); }
+}
+
+.achievement-showcase .image-wrapper {
+    position: relative;
+    
+    width: 70px;
+    height: 70px;
+
+    padding: 5px;
+    margin: 20px 0px 15px 0px;
+
+    border-radius: 50%;
+}
+
+.achievement-showcase .image-wrapper::after {
+    position: absolute;
+    content: '';
+    left: -5px;
+    top: -5px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 5px dashed var(--color-red);
+
+    animation-name: achievement-showcase-image;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.achievement-showcase .image-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
 #extra-offers {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin: 60px 0px 0px 0px;
     padding-top: 30px;
+}
+
+#extra-offers h2 {
+    margin: 10px auto 40px auto;
 }
 
 #extra-offers-wrapper {
@@ -511,33 +618,59 @@ body > section {
 }
 
 #extra-offers-preview {
+    position: relative;
+
     flex-direction: row;
     justify-content: flex-start;
     display: flex;
-
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px var(--color-gray);
+    gap: 50px;
 
     height: 0px;
+    margin: 60px 100px 25px 100px;
+
+    transition-property: height;
+    transition-delay: 0.4s;
 }
 
 #extra-offers-preview.active {
-    margin: 60px 50px 25px 50px;
-    height: 200px;
+    height: auto;
+}
+
+#extra-offers-preview.inactive {
+    height: 0px;
+}
+
+#extra-offers-preview * {
+    transform: scaleY(0);
+    transition: transform 0.4s;
+}
+
+#extra-offers-preview.active * {
+    transform: scaleY(1);
+}
+
+#extra-offers-preview.inactive * {
+    transform: scaleY(0);
+}
+
+#extra-offers-preview article {
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px var(--color-gray);
+
+    overflow-y: auto;
+    max-height: 300px;
+    max-width: 950px;
 }
 
 #extra-offers-preview>img {
-    height: 100%;
-    border-radius: 10px 0px 0px 10px;
-    border: 0px;
-    border-right: 5px;
-    border-color: var(--color-red);
-    border-style: solid;
+    height: 300px;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px var(--color-gray);
 }
 
 #extra-offers-preview article p {
-    padding: 0px 40px 0px 30px;
+    padding: 0px 40px 20px 30px;
     margin: 0px;
     font-size: 14px;
     text-align: justify;
@@ -550,15 +683,24 @@ body > section {
 }
 
 #extra-offers-preview-close {
-    position: relative;
+    position: absolute;
     width: 32px;
     height: auto;
     aspect-ratio: 1;
-    margin: 15px;
+    
+    top: 15px;
+    left: 15px;
+    padding: 5px;
+
+    opacity: 0.8;
+    border-radius: 5px;
+    background-color: var(--color-white);
 }
 
 #extra-offers-preview-close img {
-    width: 100%;
+    width: 24px;
+    margin: 4px;
+    opacity: 1;
     transition: all 0.2s;
 }
 
@@ -781,6 +923,10 @@ form h1 {
     #offer article a {
         transition: all 0s;
     }
+    
+    #extra-offers-wrapper-close:active {
+        background-color: var(--color-red);
+    }
 
     #extra-offers-wrapper article:active::after {
         height: 100%;
@@ -814,6 +960,12 @@ form h1 {
         border-color: var(--color-black);
     }
 
+    .achievement-showcase:hover {
+        transition: all 0.2s;
+        transform: translateY(-10px);
+        box-shadow: 0px 10px 15px var(--color-gray);
+    }
+
     #extra-offers-wrapper article:hover::after {
         height: 100%;
     }
@@ -823,7 +975,7 @@ form h1 {
     }
 
     #extra-offers-preview-close:hover img {
-        transform: scale(1.5);
+        transform: scale(1.2);
     }
 
     footer a:hover {
@@ -932,6 +1084,18 @@ form h1 {
     #extra-offers-wrapper article h2 {
         font-size: 25px;
     }
+
+    #extra-offers-preview {
+        margin: 60px 50px 25px 50px;
+    }
+
+    #extra-offers-preview article {
+        box-shadow: 3px 3px 5px var(--color-gray);
+    }
+
+    #extra-offers-preview>img {
+        box-shadow: 3px 3px 5px var(--color-gray);
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -940,9 +1104,18 @@ form h1 {
         padding: 10px 30px 10px 30px;
     }
 
+    #extra-offers-preview {
+        gap: 25px;
+        margin: 60px 25px 25px 25px;
+    }
+
+    #extra-offers-preview>img {
+        height: 200px
+    }
+
     #extra-offers-preview article p {
         font-size: 12px;
-        padding: 0px 0px 0px 30px;
+        padding: 0px 20px 15px 20px;
     }
 
     #extra-offers-preview article h2 {
@@ -950,7 +1123,11 @@ form h1 {
     }
 
     #extra-offers-preview-close {
-        width: 40px;
+        width: 24px;
+    }
+
+    #extra-offers-preview-close img {
+        width: 16px;
     }
 }
 
@@ -962,11 +1139,11 @@ form h1 {
 
 @media only screen and (max-width: 700px) {
     #extra-offers-preview {
-        position: relative;
         flex-direction: column;
         align-items: center;
 
-        margin: 60px 50px 25px 50px;
+        gap: 0px;
+        margin: 60px 100px 25px 100px;
     }
 
     #extra-offers-preview.active {
@@ -978,7 +1155,13 @@ form h1 {
         width: 100%;
         aspect-ratio: 1;
         border: 0px;
-        border-radius: 0px;
+        border-radius: 10px 10px 0px 0px;
+        box-shadow: 3px 0px 5px var(--color-gray);
+    }
+
+    #extra-offers-preview article {
+        border-radius: 0px 0px 10px 10px;
+        box-shadow: 3px 0px 5px var(--color-gray);
     }
 
     #extra-offers-preview article p {
@@ -986,14 +1169,18 @@ form h1 {
     }
 
     #extra-offers-preview-close {
-        position: absolute;
-        top: 5px;
-        right: 5px;
+        top: 10px;
+        right: 10px;
+        left: auto;
         width: 32px;
         padding: 10px;
 
         background-color: var(--color-white);
         border-radius: 5px;
+    }
+
+    #extra-offers-preview-close img {
+        width: 24px;
     }
 
     #extra-offers-preview-close:active {
@@ -1028,8 +1215,15 @@ form h1 {
     }
 
     #extra-offers-preview-close {
-        width: 24px;
-        margin: 7px;
+        padding: 5px;
+        width: 18px;
+    }
+    #extra-offers-preview-close img {
+        width: 10px;
+    }
+
+    #extra-offers-preview article p {
+        padding: 0px 15px 10px 20px;
     }
 }
 
@@ -1038,8 +1232,8 @@ form h1 {
         font-size: 25px;
     }
 
-    #extra-offers-preview-close {
-        width: 18px;
+    #extra-offers-preview article p {
+        font-size: 10px;
     }
 }
 
