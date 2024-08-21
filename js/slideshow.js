@@ -20,9 +20,9 @@ function SlideDragController(element) {
     });
     this.element.addEventListener("touchend", (event) => {
         if (this.startX > event.changedTouches[0].clientX) {
-            setActiveImage(getDecrementedSlideCurrentImage());
-        } else if (event.changedTouches[0].clientX > this.startX) {
             setActiveImage(getIncrementedSlideCurrentImage());
+        } else if (event.changedTouches[0].clientX > this.startX) {
+            setActiveImage(getDecrementedSlideCurrentImage());
         }
     });
 }
