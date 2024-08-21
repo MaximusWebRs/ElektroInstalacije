@@ -9,8 +9,6 @@ function initExtraOffers() {
     for (let i = 0; i < exofs.length; i++) {
         extraOffers[i] = new ExtraOffer(exofs[i]);
     }
-
-    console.log(fetch("../images/extra offers/").body);
 }
 
 function showExtraOfferPreview(exof) {
