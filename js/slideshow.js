@@ -15,10 +15,20 @@ let slideTransitioning = false;
 function SlideDragController(element) {
     this.element = element;
     this.startX = 0;
+    this.element.addEventListener("dragstart", (event) => {
+        this.startX = event.clientX;
+    });
+    this.element.addEventListener("dragend", (event) => {
+        if (this.startX > event.clientX) {
+            setActiveImage(getDecrementedSlideCurrentImage());
+        } else if (event.clientX > this.startX) {
+            setActiveImage(getIncrementedSlideCurrentImage());
+        }
+    });
+
     this.element.addEventListener("touchstart", (event) => {
         this.startX = event.touches[0].clientX;
     });
-
     this.element.addEventListener("touchend", (event) => {
         if (this.startX > event.changedTouches[0].clientX) {
             setActiveImage(getDecrementedSlideCurrentImage());
