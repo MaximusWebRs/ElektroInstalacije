@@ -263,6 +263,7 @@ body > section {
 
 .slideshow-control.inactive {
     background-color: var(--color-gray);
+    cursor: pointer;
 }
 
 .scroller-w-images {
@@ -275,27 +276,18 @@ body > section {
     margin: 20px auto 5px auto;
 }
 
-.scroller-w-images hr {
-    display: none;
-    border: 0px;
-    height: 1px;
-    width: 95%;
-    margin: 0px auto 0px auto;
-    background-color: var(--color-red);
-}
-
-.scroller-w-images a {
+.scroller-w-images .wrapper a {
     height: 35px;
     width: fit-content;
     filter: brightness(0%);
     transition: filter 0.3s;
 }
 
-.scroller-w-images a:hover {
+.scroller-w-images .wrapper a:hover {
     filter: brightness(100%);
 }
 
-.scroller-w-images a img {
+.scroller-w-images .wrapper a img {
     height: 100%;
 }
 
@@ -943,7 +935,7 @@ form h1 {
         height: 100%;
     }
 
-    #extra-offers-wrapper article:active a {
+    #extra-offers-wrapper article a {
         opacity: 1;
     }
 
