@@ -3,7 +3,8 @@ const imageRatio = 3;
 const imageRatioVertical = 0.8;
 const verticalSwitch = 800;
 
-let imagesContainer
+let imagesContainer;
+let slideDragController;
 let slideImages;
 let slideTransitionDuration;
 
@@ -11,11 +12,28 @@ let slideTimeoutId = 0;
 let slideCurrentImage = 0;
 let slideTransitioning = false;
 
+function SlideDragController(element) {
+    this.element = element;
+    this.startX = 0;
+    this.element.addEventListener("touchstart", (event) => {
+        this.startX = event.touches[0].clientX;
+    });
+
+    this.element.addEventListener("touchend", (event) => {
+        if (this.startX > event.changedTouches[0].clientX) {
+            setActiveImage(getDecrementedSlideCurrentImage());
+        } else if (event.changedTouches[0].clientX > this.startX) {
+            setActiveImage(getIncrementedSlideCurrentImage());
+        }
+    });
+}
+
 function initSlideshow()
 {
-    imagesContainer = document.getElementById("slideshow-images")
+    imagesContainer = document.getElementById("slideshow-images");
+    slideDragController = new SlideDragController(document.getElementById("slideshow-images-dragger"));
     slideTransitionDuration = parseInt(window.getComputedStyle(imagesContainer).getPropertyValue("--slideshow-transition-duration"));
-    let images = imagesContainer.children;
+    let images = imagesContainer.querySelectorAll("picture");
     slideImages = [images.length];
     for (let i = 0; i < images.length; i++) {
         slideImages[i] = new SlideImage(images[i], createSlideshowControl(i));
@@ -78,18 +96,18 @@ function startLoop()
         return;
     }
     slideTimeoutId = setTimeout(() => {
-        setActiveImage(getIncrementedslideCurrentImage());
+        setActiveImage(getIncrementedSlideCurrentImage());
     }, slideDuration);
 }
 
-function getIncrementedslideCurrentImage() {
+function getIncrementedSlideCurrentImage() {
     if (slideCurrentImage + 1 >= slideImages.length) {
         return 0;
     }
     return slideCurrentImage + 1;
 }
 
-function getDecrementedslideCurrentImage() {
+function getDecrementedSlideCurrentImage() {
     if (slideCurrentImage - 1 < 0) {
         return slideImages.length - 1;
     }
