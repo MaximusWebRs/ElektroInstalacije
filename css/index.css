@@ -806,12 +806,6 @@ footer :is(nav,section) h2 {
     text-align: justify;
 }
 
-#footer-map {
-    width: 350px;
-    height: 250px;
-    border: 0px;
-}
-
 #footer-websites {
     gap: 5px;
     display: flex;
