@@ -48,6 +48,7 @@ function gatherParameters() {
         from_name: document.getElementById("form-name").value,
         from_mail: document.getElementById("form-email").value,
         from_number: document.getElementById("form-phone").value,
+        desc: document.geteElementById("form-desc").value,
         object_type: document.querySelector("input[name='offer']:checked").value,
         services: theServices
     };
